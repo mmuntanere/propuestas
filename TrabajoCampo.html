@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Operaciones de Campo - Módulo 6</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #D97706;
+            /* Ámbar/Naranja Operaciones */
+            --secondary: #2563EB;
+            /* Azul Tecnología */
+            --dark: #1F2937;
+            --light: #F3F4F6;
+            --white: #ffffff;
+            --border: #E5E7EB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #eef2f6;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            color: var(--dark);
+        }
+
+        .infographic-container {
+            background: var(--white);
+            width: 800px;
+            min-height: 1120px;
+            padding: 60px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 32px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #6B7280;
+            margin-top: 10px;
+        }
+
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+
+        .flow-container::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 40px;
+            bottom: 40px;
+            width: 4px;
+            background: #E5E7EB;
+            z-index: 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--white);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+            background: #F9FAFB;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .step-number {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #9CA3AF;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: var(--dark);
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: #4B5563;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .step.final .step-icon {
+            border-color: var(--secondary);
+            color: var(--secondary);
+            background: #EFF6FF;
+        }
+
+        .step.final .step-content {
+            border-left-color: var(--secondary);
+            background: #EFF6FF;
+        }
+
+        .result-section {
+            margin-top: 50px;
+            background: var(--dark);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .result-header i {
+            color: #25D366;
+            /* Verde WhatsApp */
+            font-size: 28px;
+        }
+
+        /* Mockup de Chat */
+        .chat-bubble {
+            background: #DCF8C6;
+            color: #333;
+            padding: 15px;
+            border-radius: 8px;
+            position: relative;
+            max-width: 80%;
+            margin-bottom: 10px;
+            font-family: 'Helvetica', sans-serif;
+            font-size: 14px;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-bubble::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10px;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+            border-top-color: #DCF8C6;
+            border-right: 0;
+            margin-top: 10px;
+            margin-right: -10px;
+        }
+
+        .chat-meta {
+            font-size: 11px;
+            color: #888;
+            text-align: right;
+            margin-top: 5px;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #9CA3AF;
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .infographic-container {
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                padding: 20px;
+            }
+
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="infographic-container">
+        <!-- Botón Volver -->
+        <a href="index.html"
+            style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 14px;">
+            <i class="fas fa-arrow-left"></i> Volver al Inicio
+        </a>
+        <header>
+            <h1>Operaciones de Campo y Rutas</h1>
+            <div class="subtitle">Coordinación de Cuadrillas: Agenda en el bolsillo, cero llamadas.</div>
+        </header>
+
+        <div class="flow-container">
+            <!-- Paso 1 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">Paso 01</span>
+                    <h3 class="step-title">Planificación Centralizada</h3>
+                    <p class="step-desc">El coordinador asigna las tareas del día siguiente en un Excel, Calendar o ERP.
+                        Simplemente pone: <em>"Juan -> Cliente A, B y C"</em>.</p>
+                </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">Paso 02</span>
+                    <h3 class="step-title">Disparador Automático (18:00h)</h3>
+                    <p class="step-desc">Al terminar la jornada, el sistema se activa automáticamente. No requiere que
+                        nadie pulse "enviar". Revisa la agenda de mañana.</p>
+                </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-magic"></i>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">Paso 03</span>
+                    <h3 class="step-title">Generación de Ruta (IA)</h3>
+                    <p class="step-desc">El sistema personaliza el mensaje para cada operario. Añade <strong>enlaces de
+                            GPS (Google Maps)</strong> y adjunta el dossier técnico digital.</p>
+                </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">Paso 04</span>
+                    <h3 class="step-title">Envío al Móvil</h3>
+                    <p class="step-desc">El trabajador recibe un WhatsApp/Telegram con la ruta y los Briefings de
+                        trabajo. Sin instalar apps nuevas ni contraseñas que olvidar.</p>
+                </div>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="step final">
+                <div class="step-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">Paso 05</span>
+                    <h3 class="step-title">Confirmación de Lectura</h3>
+                    <p class="step-desc">El operario pulsa un botón "Confirmar". Si a las 21:00h no ha confirmado, el
+                        sistema alerta al jefe para evitar sorpresas por la mañana.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-header">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                    <h3 style="margin:0; font-size: 18px;">Experiencia del Trabajador</h3>
+                    <small style="opacity: 0.8;">Así reciben la orden de trabajo en su móvil.</small>
+                </div>
+            </div>
+
+            <div style="background: #e5ddd5; padding: 20px; border-radius: 8px;">
+                <!-- Mensaje Bot -->
+                <div style="display:flex; justify-content: flex-start;">
+                    <div class="chat-bubble">
+                        <strong>🤖 Coordinador Bot</strong><br><br>
+                        👋 Hola Carlos, aquí tienes tu ruta para mañana <strong>Jueves 26</strong>:<br><br>
+                        📍 <strong>08:00h - Urbanización Los Pinos</strong><br>
+                        📝 <em>Tarea:</em> Poda de setos perimetrales.<br>
+                        🔗 <a href="#" style="color:#027eb5;">Ver en Google Maps</a><br>
+                        📄 <a href="#" style="color:#027eb5;"><strong>Abrir Briefing Técnico (PDF)</strong></a><br><br>
+                        📍 <strong>11:30h - Calle Mayor 45</strong><br>
+                        📝 <em>Tarea:</em> Revisión riego por goteo.<br>
+                        ⚠️ <em>Nota:</em> Llamar al conserje antes de entrar.<br>
+                        🔗 <a href="#" style="color:#027eb5;">Ver en Google Maps</a><br>
+                        📄 <a href="#" style="color:#027eb5;"><strong>Abrir Briefing Técnico (PDF)</strong></a><br><br>
+                        👇 Por favor, confirma que lo has recibido.
+                        <div class="chat-meta">18:01 ✓</div>
+                    </div>
+                </div>
+
+                <!-- Botón Interactivo simulado -->
+                <div style="text-align:center; margin-top:10px;">
+                    <span
+                        style="background:white; color:#027eb5; padding:8px 20px; border-radius:15px; font-weight:bold; font-size:13px; box-shadow: 0 1px 2px rgba(0,0,0,0.1); cursor:pointer;">✅
+                        Confirmar Asistencia</span>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            Soluciones de Automatización Inteligente
+        </footer>
+    </div>
+
+</body>
+
+</html>

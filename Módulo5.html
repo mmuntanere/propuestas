@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infografía: Clima Laboral y Feedback - Módulo 5</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0891b2;
+            /* Cian Profundo (Feedback) */
+            --secondary: #f97316;
+            /* Naranja (Acción/Sentimiento) */
+            --dark: #1F2937;
+            --light: #F3F4F6;
+            --white: #ffffff;
+            --border: #E5E7EB;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #eef2f6;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            color: var(--dark);
+        }
+
+        /* Contenedor Principal (Hoja A4 aprox) */
+        .infographic-container {
+            background: var(--white);
+            width: 800px;
+            min-height: 1120px;
+            /* A4 Ratio */
+            padding: 60px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px solid var(--light);
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 32px;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: #6B7280;
+            margin-top: 10px;
+        }
+
+        /* Diagrama de Flujo */
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+        }
+
+        /* Línea conectora vertical */
+        .flow-container::before {
+            content: '';
+            position: absolute;
+            left: 50px;
+            top: 40px;
+            bottom: 40px;
+            width: 4px;
+            background: #E5E7EB;
+            z-index: 0;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-icon {
+            width: 100px;
+            height: 100px;
+            background: var(--white);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--primary);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+            background: #F9FAFB;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        }
+
+        .step-number {
+            font-size: 12px;
+            text-transform: uppercase;
+            color: #9CA3AF;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin: 0 0 8px 0;
+            color: var(--dark);
+        }
+
+        .step-desc {
+            font-size: 14px;
+            color: #4B5563;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        /* Highlight para el paso final */
+        .step.final .step-icon {
+            border-color: var(--secondary);
+            color: var(--secondary);
+            background: #FFEDD5;
+            /* Fondo naranja claro */
+        }
+
+        .step.final .step-content {
+            border-left-color: var(--secondary);
+            background: #FFEDD5;
+        }
+
+        /* Sección Tabla Inferior */
+        .result-section {
+            margin-top: 50px;
+            background: var(--dark);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .result-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .result-header i {
+            color: var(--secondary);
+            font-size: 24px;
+        }
+
+        /* Tabla estilo Dashboard */
+        .mock-table {
+            width: 100%;
+            background: white;
+            border-radius: 6px;
+            overflow: hidden;
+            font-size: 13px;
+            color: var(--dark);
+        }
+
+        .mock-table th {
+            background: var(--primary);
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .mock-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Badges de Sentimiento */
+        .sentiment-positive {
+            background: #D1FAE5;
+            color: #065F46;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .sentiment-neutral {
+            background: #F3F4F6;
+            color: #4B5563;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        .sentiment-negative {
+            background: #FEE2E2;
+            color: #991B1B;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 11px;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 12px;
+            color: #9CA3AF;
+        }
+
+        /* Estilos de impresión */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .infographic-container {
+                width: 100%;
+                box-shadow: none;
+                border: none;
+                padding: 20px;
+            }
+
+            /* Forzar impresión de colores de fondo */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="infographic-container">
+        <!-- Botón Volver -->
+        <a href="index.html"
+            style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 14px;">
+            <i class="fas fa-arrow-left"></i> Volver al Inicio
+        </a>
+        <header>
+            <h1>Ciclo de Vida y Clima Laboral</h1>
+            <div class="subtitle">Automatización de la Escucha Activa: Del Onboarding al Offboarding.</div>
+        </header>
+
+        <div class="flow-container">
+            <!-- Paso 1 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-calendar-check"></i>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">Paso 01</span>
+                    <h3 class="step-title">Disparadores Temporales</h3>
+                    <p class="step-desc">El sistema monitorea fechas clave automáticamente: <strong>Día 7
+                            (Entrada)</strong>, Trimestral (Clima) y Baja (Salida). Nadie tiene que recordar enviar la
+                        encuesta.</p>
+                </div>
+            </div>
+
+            <!-- Paso 2 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-paper-plane"></i>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">Paso 02</span>
+                    <h3 class="step-title">Envío Multicanal</h3>
+                    <p class="step-desc">Se envía un formulario breve y amigable (Typeform/Tally) vía <strong>WhatsApp o
+                            Email</strong> personalizado según el momento del empleado.</p>
+                </div>
+            </div>
+
+            <!-- Paso 3 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-comments"></i>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">Paso 03</span>
+                    <h3 class="step-title">Recogida de Feedback</h3>
+                    <p class="step-desc">Las respuestas (anónimas o nominales) se centralizan en tiempo real. Se acabó
+                        transcribir encuestas en papel o descargar Excels dispersos.</p>
+                </div>
+            </div>
+
+            <!-- Paso 4 -->
+            <div class="step">
+                <div class="step-icon">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">Paso 04</span>
+                    <h3 class="step-title">Análisis de Sentimiento (IA)</h3>
+                    <p class="step-desc">La IA lee los comentarios abiertos ("Me siento agobiado") y detecta el tono
+                        emocional y las palabras clave problemáticas.</p>
+                </div>
+            </div>
+
+            <!-- Paso 5 -->
+            <div class="step final">
+                <div class="step-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="step-content">
+                    <span class="step-number">Paso 05</span>
+                    <h3 class="step-title">Dashboard Ejecutivo</h3>
+                    <p class="step-desc">RRHH recibe un informe visual con métricas de felicidad (eNPS) y alertas
+                        tempranas de "Fuga de Talento" antes de que ocurra.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="result-section">
+            <div class="result-header">
+                <i class="fas fa-heart-pulse"></i>
+                <div>
+                    <h3 style="margin:0; font-size: 18px;">Resultado: Termómetro de la Empresa</h3>
+                    <small style="opacity: 0.8;">Visión en tiempo real del estado de ánimo por departamentos.</small>
+                </div>
+            </div>
+
+            <table class="mock-table" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>DEPARTAMENTO</th>
+                        <th>eNPS (0-10)</th>
+                        <th>RESUMEN IA (TOPIC PRINCIPAL)</th>
+                        <th>SENTIMIENTO</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ventas</td>
+                        <td>8.5</td>
+                        <td>Motivados por nuevos incentivos.</td>
+                        <td><span class="sentiment-positive">Positivo 😀</span></td>
+                    </tr>
+                    <tr>
+                        <td>Soporte Técnico</td>
+                        <td>4.2</td>
+                        <td>Quejas recurrentes sobre turnos rotativos.</td>
+                        <td><span class="sentiment-negative">Crítico 🚨</span></td>
+                    </tr>
+                    <tr>
+                        <td>Administración</td>
+                        <td>6.0</td>
+                        <td>Estabilidad, pero piden mejores herramientas.</td>
+                        <td><span class="sentiment-neutral">Neutro 😐</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <footer>
+            Soluciones de Automatización Inteligente
+        </footer>
+    </div>
+
+</body>
+
+</html>

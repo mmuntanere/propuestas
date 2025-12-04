@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entrega de Propuestas - Secuora</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563EB;
+            --text: #1F2937;
+            --bg: #F3F4F6;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Cabecera Tipo Carta */
+        .header {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            border-left: 5px solid var(--primary);
+        }
+
+        .brand {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6B7280;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        h1 {
+            margin: 0 0 15px 0;
+            font-size: 28px;
+            color: #111827;
+        }
+
+        p.intro {
+            font-size: 16px;
+            color: #4B5563;
+            max-width: 700px;
+            margin: 0;
+        }
+
+        /* Lista de Propuestas */
+        .proposals-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .proposal-item {
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s ease;
+            border: 1px solid #E5E7EB;
+        }
+
+        .proposal-item:hover {
+            border-color: var(--primary);
+            transform: translateX(5px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .icon-box {
+            width: 45px;
+            height: 45px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            margin-right: 20px;
+            flex-shrink: 0;
+        }
+
+        /* Colores Específicos */
+        .blue {
+            background: #eff6ff;
+            color: #2563EB;
+        }
+
+        .red {
+            background: #fef2f2;
+            color: #dc2626;
+        }
+
+        .green {
+            background: #ecfdf5;
+            color: #059669;
+        }
+
+        .purple {
+            background: #f5f3ff;
+            color: #7C3AED;
+        }
+
+        .cyan {
+            background: #ecfeff;
+            color: #0891b2;
+        }
+
+        .orange {
+            background: #fff7ed;
+            color: #D97706;
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+
+        .title {
+            display: block;
+            font-weight: 700;
+            font-size: 16px;
+            margin-bottom: 4px;
+        }
+
+        .desc {
+            display: block;
+            font-size: 14px;
+            color: #6B7280;
+        }
+
+        .arrow {
+            color: #D1D5DB;
+            font-size: 14px;
+        }
+
+        .proposal-item:hover .arrow {
+            color: var(--primary);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 13px;
+            color: #9CA3AF;
+        }
+
+        @media (max-width: 600px) {
+            .header {
+                padding: 25px;
+            }
+
+            .proposal-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+
+            .icon-box {
+                margin-bottom: 5px;
+            }
+
+            .arrow {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Mensaje de Bienvenida -->
+        <div class="header">
+            <span class="brand">IA Garriga • Automatización</span>
+            <h1>Hola, aquí tenéis vuestras propuestas</h1>
+            <p class="intro">
+                Tal como hablamos, hemos analizado vuestros procesos actuales y hemos diseñado estas <strong>6
+                    soluciones a medida</strong> para eliminar la burocracia en RRHH y mejorar la coordinación en campo.
+                <br><br>
+                Haced clic en cada módulo para ver el diagrama de flujo detallado:
+            </p>
+        </div>
+
+        <!-- Lista de Enlaces -->
+        <div class="proposals-list">
+
+            <!-- Módulo 1 -->
+            <a href="Módulo1.html" class="proposal-item" target="_blank">
+                <div class="icon-box blue"><i class="fas fa-file-signature"></i></div>
+                <div class="content">
+                    <span class="title">Módulo 1: Contratos y Onboarding</span>
+                    <span class="desc">Automatización de generación de contratos, firma digital y archivo.</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+
+            <!-- Módulo 2 -->
+            <a href="Módulo2.html" class="proposal-item" target="_blank">
+                <div class="icon-box red"><i class="fas fa-scale-balanced"></i></div>
+                <div class="content">
+                    <span class="title">Módulo 2: Legal y Embargos</span>
+                    <span class="desc">Lectura IA de notificaciones judiciales y control de deuda.</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+
+            <!-- Módulo 3 -->
+            <a href="Módulo3.html" class="proposal-item" target="_blank">
+                <div class="icon-box green"><i class="fas fa-receipt"></i></div>
+                <div class="content">
+                    <span class="title">Módulo 3: Gastos y Dietas</span>
+                    <span class="desc">Digitalización de tickets vía WhatsApp y conexión a contabilidad.</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+
+            <!-- Módulo 4 -->
+            <a href="Módulo4.html" class="proposal-item" target="_blank">
+                <div class="icon-box purple"><i class="fas fa-briefcase"></i></div>
+                <div class="content">
+                    <span class="title">Módulo 4: Reclutamiento IA</span>
+                    <span class="desc">Filtrado y ranking automático de currículums.</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+
+            <!-- Módulo 5 -->
+            <a href="Módulo5.html" class="proposal-item" target="_blank">
+                <div class="icon-box cyan"><i class="fas fa-heart-pulse"></i></div>
+                <div class="content">
+                    <span class="title">Módulo 5: Clima Laboral</span>
+                    <span class="desc">Encuestas automáticas y análisis de sentimiento del empleado.</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+
+            <!-- Módulo 6 -->
+            <a href="TrabajoCampo.html" class="proposal-item" target="_blank">
+                <div class="icon-box orange"><i class="fas fa-map-location-dot"></i></div>
+                <div class="content">
+                    <span class="title">Módulo 6: Operaciones de Campo</span>
+                    <span class="desc">Envío de rutas y tareas al móvil de los operarios (WhatsApp).</span>
+                </div>
+                <i class="fas fa-chevron-right arrow"></i>
+            </a>
+
+        </div>
+
+        <div class="footer">
+            Documento generado para uso interno • IA Garriga 2025
+        </div>
+
+    </div>
+
+</body>
+
+</html>
