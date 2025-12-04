@@ -1,0 +1,129 @@
+/* Responsive Styles for Module Pages */
+
+/* Make container fluid and reset fixed dimensions */
+.infographic-container {
+    width: 100% !important;
+    max-width: 800px;
+    min-height: auto !important;
+    padding: 30px !important;
+    box-sizing: border-box;
+}
+
+/* Mobile adjustments (Tablets and Phones) */
+@media (max-width: 768px) {
+    body {
+        padding: 10px !important;
+    }
+
+    .infographic-container {
+        padding: 20px !important;
+        border-radius: 0 !important;
+        /* Remove radius on full mobile if desired, or keep it small */
+    }
+
+    /* Header adjustments */
+    header {
+        margin-bottom: 30px !important;
+        padding-bottom: 20px !important;
+    }
+
+    h1 {
+        font-size: 24px !important;
+        line-height: 1.2 !important;
+    }
+
+    .subtitle {
+        font-size: 16px !important;
+    }
+
+    /* Top Navigation (Back button and Logo) */
+    .infographic-container>div[style*="display: flex"] {
+        flex-direction: column-reverse;
+        /* Put logo on top or keep as is? Let's stack them */
+        align-items: flex-start !important;
+        gap: 15px !important;
+        margin-bottom: 30px !important;
+    }
+
+    .infographic-container>div[style*="display: flex"] img {
+        height: 35px !important;
+        /* Slightly smaller logo */
+    }
+
+    /* Flow container adjustments */
+    .flow-container::before {
+        left: 30px !important;
+        /* Align with center of smaller icon (60px / 2) */
+    }
+
+    .step {
+        gap: 15px !important;
+        margin-bottom: 25px !important;
+        align-items: flex-start !important;
+        /* Align icon with top of content */
+    }
+
+    .step-icon {
+        width: 60px !important;
+        height: 60px !important;
+        font-size: 24px !important;
+        flex-shrink: 0;
+        margin-top: 0;
+        /* Align with top */
+    }
+
+    .step-content {
+        padding: 15px !important;
+    }
+
+    .step-number {
+        font-size: 10px !important;
+    }
+
+    .step-title {
+        font-size: 16px !important;
+    }
+
+    .step-desc {
+        font-size: 13px !important;
+    }
+
+    /* Result Section & Tables */
+    .result-section {
+        padding: 20px !important;
+        margin-top: 30px !important;
+    }
+
+    .result-header {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px !important;
+        text-align: left;
+    }
+
+    .result-header i {
+        font-size: 20px !important;
+    }
+
+    /* Make table scrollable */
+    .mock-table-wrapper {
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        margin-top: 15px;
+    }
+
+    .mock-table {
+        min-width: 500px;
+        /* Force width to ensure it looks good and triggers scroll */
+    }
+
+    /* If the table is not wrapped, we might need to target it directly, 
+       but wrapping it in JS or assuming it will scroll if we set display block on it? 
+       Tables are tricky. Let's try setting display block on the table itself if no wrapper. */
+    table.mock-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
