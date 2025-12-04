@@ -7,6 +7,7 @@
     <title>Infografía: Clima Laboral y Feedback - Módulo 5</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
     <style>
         :root {
             --primary: #0891b2;
@@ -261,18 +262,21 @@
 
     <div class="infographic-container">
         <!-- Botón Volver -->
-        <a href="index.html"
-            style="display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 14px;">
-            <i class="fas fa-arrow-left"></i> Volver al Inicio
-        </a>
-        <header>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <a href="index.html"
+                style="display: inline-flex; align-items: center; gap: 8px; color: var(--primary); text-decoration: none; font-weight: 600; font-size: 14px;">
+                <i class="fas fa-arrow-left"></i> Volver al Inicio
+            </a>
+            <img src="images/logo_seroca.jpg" alt="Seroca Logo" style="height: 40px;">
+        </div>
+        <header class="animate-on-scroll">
             <h1>Ciclo de Vida y Clima Laboral</h1>
             <div class="subtitle">Automatización de la Escucha Activa: Del Onboarding al Offboarding.</div>
         </header>
 
         <div class="flow-container">
             <!-- Paso 1 -->
-            <div class="step">
+            <div class="step animate-on-scroll">
                 <div class="step-icon">
                     <i class="fas fa-calendar-check"></i>
                 </div>
@@ -286,7 +290,7 @@
             </div>
 
             <!-- Paso 2 -->
-            <div class="step">
+            <div class="step animate-on-scroll">
                 <div class="step-icon">
                     <i class="fas fa-paper-plane"></i>
                 </div>
@@ -299,7 +303,7 @@
             </div>
 
             <!-- Paso 3 -->
-            <div class="step">
+            <div class="step animate-on-scroll">
                 <div class="step-icon">
                     <i class="fas fa-comments"></i>
                 </div>
@@ -312,7 +316,7 @@
             </div>
 
             <!-- Paso 4 -->
-            <div class="step">
+            <div class="step animate-on-scroll">
                 <div class="step-icon">
                     <i class="fas fa-robot"></i>
                 </div>
@@ -325,7 +329,7 @@
             </div>
 
             <!-- Paso 5 -->
-            <div class="step final">
+            <div class="step final animate-on-scroll">
                 <div class="step-icon">
                     <i class="fas fa-chart-line"></i>
                 </div>
@@ -338,7 +342,7 @@
             </div>
         </div>
 
-        <div class="result-section">
+        <div class="result-section animate-on-scroll">
             <div class="result-header">
                 <i class="fas fa-heart-pulse"></i>
                 <div>
@@ -384,6 +388,7 @@
         </footer>
     </div>
 
+    <script src="js/main.js"></script>
 </body>
 
 </html>

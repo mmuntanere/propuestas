@@ -7,6 +7,7 @@
     <title>Entrega de Propuestas - Secuora</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="css/animations.css" rel="stylesheet">
     <style>
         :root {
             --primary: #2563EB;
@@ -190,8 +191,11 @@
     <div class="container">
 
         <!-- Mensaje de Bienvenida -->
-        <div class="header">
-            <span class="brand">IA Garriga • Automatización</span>
+        <div class="header animate-on-scroll">
+            <div class="header-logo-container">
+                <img src="images/logo_seroca.jpg" alt="Seroca Logo" class="brand-logo">
+                <span class="brand">Seroca • Automatización</span>
+            </div>
             <h1>Hola, aquí tenéis vuestras propuestas</h1>
             <p class="intro">
                 Tal como hablamos, hemos analizado vuestros procesos actuales y hemos diseñado estas <strong>6
@@ -205,7 +209,7 @@
         <div class="proposals-list">
 
             <!-- Módulo 1 -->
-            <a href="Módulo1.html" class="proposal-item" target="_blank">
+            <a href="Módulo1.html" class="proposal-item animate-on-scroll" target="_blank">
                 <div class="icon-box blue"><i class="fas fa-file-signature"></i></div>
                 <div class="content">
                     <span class="title">Módulo 1: Contratos y Onboarding</span>
@@ -215,7 +219,7 @@
             </a>
 
             <!-- Módulo 2 -->
-            <a href="Módulo2.html" class="proposal-item" target="_blank">
+            <a href="Módulo2.html" class="proposal-item animate-on-scroll" target="_blank">
                 <div class="icon-box red"><i class="fas fa-scale-balanced"></i></div>
                 <div class="content">
                     <span class="title">Módulo 2: Legal y Embargos</span>
@@ -225,7 +229,7 @@
             </a>
 
             <!-- Módulo 3 -->
-            <a href="Módulo3.html" class="proposal-item" target="_blank">
+            <a href="Módulo3.html" class="proposal-item animate-on-scroll" target="_blank">
                 <div class="icon-box green"><i class="fas fa-receipt"></i></div>
                 <div class="content">
                     <span class="title">Módulo 3: Gastos y Dietas</span>
@@ -235,7 +239,7 @@
             </a>
 
             <!-- Módulo 4 -->
-            <a href="Módulo4.html" class="proposal-item" target="_blank">
+            <a href="Módulo4.html" class="proposal-item animate-on-scroll" target="_blank">
                 <div class="icon-box purple"><i class="fas fa-briefcase"></i></div>
                 <div class="content">
                     <span class="title">Módulo 4: Reclutamiento IA</span>
@@ -245,7 +249,7 @@
             </a>
 
             <!-- Módulo 5 -->
-            <a href="Módulo5.html" class="proposal-item" target="_blank">
+            <a href="Módulo5.html" class="proposal-item animate-on-scroll" target="_blank">
                 <div class="icon-box cyan"><i class="fas fa-heart-pulse"></i></div>
                 <div class="content">
                     <span class="title">Módulo 5: Clima Laboral</span>
@@ -255,7 +259,7 @@
             </a>
 
             <!-- Módulo 6 -->
-            <a href="TrabajoCampo.html" class="proposal-item" target="_blank">
+            <a href="TrabajoCampo.html" class="proposal-item animate-on-scroll" target="_blank">
                 <div class="icon-box orange"><i class="fas fa-map-location-dot"></i></div>
                 <div class="content">
                     <span class="title">Módulo 6: Operaciones de Campo</span>
@@ -266,11 +270,12 @@
 
         </div>
 
-        <div class="footer">
-            Documento generado para uso interno • IA Garriga 2025
+        <div class="footer animate-on-scroll">
+            Documento generado para uso interno • Seroca 2025
         </div>
 
     </div>
+    <script src="js/main.js"></script>
 
 </body>
 
